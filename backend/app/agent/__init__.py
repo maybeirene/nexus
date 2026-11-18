@@ -1,0 +1,1 @@
+"""Orquestación mínima del asistente."""

@@ -1,0 +1,52 @@
+# Secretos y entorno local
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+*.pem
+*.key
+*.p12
+*.pfx
+token.json
+credentials.json
+
+# Datos locales
+data/
+local_data/
+personal_data/
+private_uploads/
+backups/
+*.db
+*.sqlite
+*.sqlite3
+
+# Índices vectoriales y modelos descargados
+chroma_db/
+qdrant_storage/
+vector_db/
+vector_store/
+models/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Frontend y escritorio
+node_modules/
+dist/
+build/
+desktop/src-tauri/target/
+
+# Editores y sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
