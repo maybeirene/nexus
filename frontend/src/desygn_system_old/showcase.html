@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEXUS · Sistema de diseño</title>
+<link rel="stylesheet" href="index.css">
+<style>
+  /* Solo para esta página de catálogo */
+  .page { max-width: 880px; margin: 0 auto; padding: var(--space-6) var(--space-5); display: grid; gap: var(--space-6); }
+  .row { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--space-3); }
+  .swatch { height: 56px; border: 1px solid var(--border); border-radius: var(--radius-md); }
+  .swatch-name { margin-top: var(--space-1); font-size: var(--text-xs); color: var(--text-muted); font-family: var(--font-mono); }
+  .stack { display: grid; gap: var(--space-3); }
+  .demo { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; display: grid; grid-template-columns: 220px 1fr; min-height: 320px; }
+  .demo .sidebar { border-right: 1px solid var(--border); }
+  .demo .main__body { display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-5); }
+  @media (max-width: 640px) { .demo { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="row" style="justify-content: space-between">
+    <div>
+      <h1>NEXUS · Sistema de diseño</h1>
+      <p style="color: var(--text-muted)">Un acento, tres radios, oscuro por defecto.</p>
+    </div>
+    <div class="row" role="group" aria-label="Tema">
+      <button class="btn btn--sm" data-set-theme="dark">Oscuro</button>
+      <button class="btn btn--sm" data-set-theme="light">Claro</button>
+    </div>
+  </header>
+
+  <section class="stack">
+    <h2>Color</h2>
+    <div class="grid">
+      <div><div class="swatch" style="background:var(--bg)"></div><div class="swatch-name">--bg</div></div>
+      <div><div class="swatch" style="background:var(--surface)"></div><div class="swatch-name">--surface</div></div>
+      <div><div class="swatch" style="background:var(--surface-2)"></div><div class="swatch-name">--surface-2</div></div>
+      <div><div class="swatch" style="background:var(--accent)"></div><div class="swatch-name">--accent</div></div>
+      <div><div class="swatch" style="background:var(--success)"></div><div class="swatch-name">--success</div></div>
+      <div><div class="swatch" style="background:var(--warning)"></div><div class="swatch-name">--warning</div></div>
+      <div><div class="swatch" style="background:var(--danger)"></div><div class="swatch-name">--danger</div></div>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>Botones</h2>
+    <div class="row">
+      <button class="btn btn--primary">Enviar</button>
+      <button class="btn">Cancelar</button>
+      <button class="btn btn--ghost">Ahora no</button>
+      <button class="btn btn--danger">Borrar conversación</button>
+      <button class="btn" disabled>Desactivado</button>
+      <button class="btn btn--sm">Pequeño</button>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>Campos</h2>
+    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))">
+      <div class="field">
+        <label class="field__label" for="url">Dirección del servidor</label>
+        <input class="input" id="url" placeholder="https://nexus.example.com">
+        <span class="field__hint">Usa HTTPS para servidores remotos.</span>
+      </div>
+      <div class="field">
+        <label class="field__label" for="url2">Dirección del servidor</label>
+        <input class="input" id="url2" value="localhost" aria-invalid="true">
+        <span class="field__error">Falta el protocolo, por ejemplo http://127.0.0.1:8000.</span>
+      </div>
+      <label class="row" style="gap: var(--space-3)">
+        <input type="checkbox" class="switch" checked>
+        <span>Iniciar el backend local</span>
+      </label>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>Estados</h2>
+    <div class="row">
+      <span class="badge badge--success">Disponible</span>
+      <span class="badge badge--warning">Cargando modelo</span>
+      <span class="badge badge--danger">Error</span>
+      <span class="badge badge--accent">Activo</span>
+      <span class="badge">Próximamente</span>
+      <span class="spinner" role="status" aria-label="Cargando"></span>
+    </div>
+    <div class="alert alert--danger" role="alert">
+      <p class="alert__title">No se pudo conectar con el backend</p>
+      <p class="alert__text">Comprueba que NEXUS está en marcha y reintenta.</p>
+    </div>
+    <div class="alert alert--success" role="status">
+      <p class="alert__title">Documento indexado</p>
+      <p class="alert__text">Ya puedes hacer preguntas sobre «informe.pdf».</p>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>Layout y chat</h2>
+    <div class="demo">
+      <nav class="sidebar" aria-label="Principal">
+        <button class="btn btn--primary" style="margin-bottom: var(--space-2)">Nuevo chat</button>
+        <a class="nav-item" href="#" aria-current="page">Conversaciones</a>
+        <a class="nav-item" href="#">Agentes</a>
+        <a class="nav-item" href="#">Documentos</a>
+        <a class="nav-item" href="#">Calendario <span class="badge nav-item__soon">Próximamente</span></a>
+        <div class="sidebar__section"><a class="nav-item" href="#">Ajustes</a></div>
+      </nav>
+      <div class="main">
+        <div class="main__body">
+          <div class="chat">
+            <div class="message message--user">¿Qué tengo pendiente esta semana?</div>
+            <div class="message">
+              <div class="message__meta">NEXUS · Agente de tareas</div>
+              <p>Tienes tres tareas abiertas. La más próxima vence el jueves: revisar el contrato.</p>
+            </div>
+          </div>
+          <div class="composer">
+            <textarea class="textarea" rows="1" placeholder="Escribe a NEXUS…" aria-label="Mensaje"></textarea>
+            <button class="btn btn--primary">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>Vacío</h2>
+    <div class="card empty">
+      <h3>Aún no hay documentos</h3>
+      <p class="empty__text">Importa un archivo para que NEXUS pueda responder con su contenido.</p>
+      <button class="btn btn--primary">Importar documento</button>
+    </div>
+  </section>
+
+</div>
+<script>
+  document.querySelectorAll("[data-set-theme]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      document.documentElement.dataset.theme = b.dataset.setTheme;
+    });
+  });
+</script>
+</body>
+</html>

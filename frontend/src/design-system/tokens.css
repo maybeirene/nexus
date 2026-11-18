@@ -1,0 +1,56 @@
+/*
+ * Tokens del sistema de diseño NEXUS.
+ * Cada variable genera utilidades de Tailwind: bg-surface, text-muted,
+ * border-line, rounded-control, text-caption, etc.
+ */
+@theme {
+  /* Superficies: bg < surface < elevated. La jerarquía va por fondo y borde, nunca por sombra. */
+  --color-bg: #0f1218;
+  --color-surface: #151a22;
+  --color-elevated: #1c222c;
+  --color-line: #2a313d;
+
+  /* Texto */
+  --color-fg: #e6e9ef;
+  --color-muted: #98a1b0;
+
+  /* Acento único: acción principal, elemento activo y foco. */
+  --color-accent: #8b9cff;
+  --color-on-accent: #0f1218;
+
+  /* Estados */
+  --color-success: #5fd3a0;
+  --color-warning: #e8b95a;
+  --color-danger: #f27d7d;
+
+  /* Radios: detalle interno, control (botón, campo, tarjeta) y píldora. */
+  --radius-inner: 6px;
+  --radius-control: 10px;
+
+  /* Tipografía */
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --text-caption: 12px;
+  --text-caption--line-height: 16px;
+  --text-body: 14px;
+  --text-body--line-height: 20px;
+  --text-title: 18px;
+  --text-title--line-height: 24px;
+  --text-display: 32px;
+  --text-display--line-height: 36px;
+
+  /* Movimiento */
+  --animate-typing: typing 1.2s ease-in-out infinite;
+
+  @keyframes typing {
+    0%,
+    80%,
+    100% {
+      opacity: 0.3;
+      transform: translateY(0);
+    }
+    40% {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+  }
+}

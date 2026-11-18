@@ -1,0 +1,107 @@
+/* NEXUS · Tokens de diseño
+   Único lugar donde viven los valores. Los componentes solo usan variables.
+   Oscuro por defecto; el tema claro se activa con <html data-theme="light">. */
+
+:root {
+  color-scheme: dark;
+
+  /* Superficies */
+  --bg: #0f1218;          /* fondo de la app */
+  --surface: #151a22;     /* sidebar, tarjetas, diálogos */
+  --surface-2: #1c222c;   /* campos, botones, hover */
+  --border: #2a313d;
+  --border-strong: #3a4352;
+  --hover: #232a36;
+
+  /* Texto */
+  --text: #e6e9ef;
+  --text-muted: #98a1b0;
+  --text-faint: #7a8494;
+
+  /* Acento (único) */
+  --accent: #8b9cff;
+  --accent-strong: #a5b2ff;
+  --accent-soft: rgba(139, 156, 255, 0.14);
+  --on-accent: #0f1218;
+  --focus: #a5b2ff;
+
+  /* Estados */
+  --success: #5fd3a0;
+  --success-soft: rgba(95, 211, 160, 0.14);
+  --warning: #e8b95a;
+  --warning-soft: rgba(232, 185, 90, 0.14);
+  --danger: #f27d7d;
+  --danger-soft: rgba(242, 125, 125, 0.14);
+
+  --overlay: rgba(5, 7, 10, 0.6);
+  --shadow-overlay: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #eef0f4;
+  --border: #d9dde5;
+  --border-strong: #bcc3cf;
+  --hover: #e6e9ef;
+
+  --text: #151a22;
+  --text-muted: #556070;
+  --text-faint: #6b7585;
+
+  --accent: #4a5be0;
+  --accent-strong: #3a49c4;
+  --accent-soft: rgba(74, 91, 224, 0.1);
+  --on-accent: #ffffff;
+  --focus: #4a5be0;
+
+  --success: #1f7a54;
+  --success-soft: rgba(31, 122, 84, 0.1);
+  --warning: #8a6200;
+  --warning-soft: rgba(138, 98, 0, 0.1);
+  --danger: #c0392b;
+  --danger-soft: rgba(192, 57, 43, 0.1);
+
+  --overlay: rgba(21, 26, 34, 0.35);
+  --shadow-overlay: 0 12px 32px rgba(21, 26, 34, 0.18);
+}
+
+/* Tokens que no cambian con el tema */
+:root {
+  /* Tipografía */
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-md: 16px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --leading: 1.5;
+
+  /* Espaciado (base 4px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* Formas: solo tres radios */
+  --radius-sm: 6px;       /* chips internos, código */
+  --radius-md: 10px;      /* botones, campos, tarjetas */
+  --radius-full: 999px;   /* badges, interruptores */
+
+  /* Movimiento */
+  --duration: 120ms;
+  --ease: ease-out;
+
+  /* Layout */
+  --sidebar-width: 248px;
+  --sidebar-collapsed: 56px;
+  --content-max: 760px;   /* ancho de lectura del chat */
+  --control-height: 36px;
+}
