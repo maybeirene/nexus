@@ -20,7 +20,8 @@ class Settings(BaseSettings):
     ollama_base_url: str = "http://127.0.0.1:11434"
     ollama_model: str = "qwen3:4b"
     ollama_timeout_seconds: float = 180
-    ollama_num_ctx: int = 4096
+    ollama_num_ctx: int = 2048
+    ollama_num_predict: int = 128
     max_message_chars: int = 8000
     max_history_messages: int = 12
     local_owner_id: str = "local"

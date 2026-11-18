@@ -39,7 +39,7 @@ class OllamaProvider:
             "messages": [{"role": item.role, "content": item.content} for item in messages],
             "stream": False,
             "think": False,
-            "options": {"temperature": 0.7, "num_ctx": self._settings.ollama_num_ctx},
+            "options": {"temperature": 0.7, "num_ctx": self._settings.ollama_num_ctx,  "num_predict":self._settings.ollama_num_predict ,},
         }
         try:
             response = self._client.post("/api/chat", json=payload)
